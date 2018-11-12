@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body class="browse">
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
+
+        <h1>{{ page.title }}</h1>
+
+        {{ content }}
+
+        <!--<p><em>Frank: Note that these headings, and the navigation link, can be refined. Presently they include cues as to how you can edit posts to fill them in.</em></p>-->
+
+        <div class="two-col listOfLinks"><div class="col-one">
+            <h2>Posts by Chapter</h2>
+            <h3>Pleistocene Coyote</h3>
+            <ul>
+{% assign posts = site.categories.pleistocene-coyote %}
+{% for post in posts %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+{% endfor %}
+            </ul>
+            <h3>Mesoamerican Coyote</h3>
+            <ul>
+{% assign posts = site.categories.mesoamerican-coyote %}
+{% assign sortedPosts = posts | sort: 'title' %}
+{% for post in sortedPosts %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+{% endfor %}
+            </ul>
+            <h3>Coyote as Trickster</h3>
+            <ul>
+{% assign posts = site.categories.coyote-as-trickster %}
+{% for post in posts %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+{% endfor %}
+            </ul>
+            <h3>Coyote as Varmint</h3>
+            <ul>
+{% assign sortedPosts = site.categories.coyote-as-varmint | sort: 'title' %}
+{% for post in sortedPosts %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+{% endfor %}
+            </ul>
+            <h3>Urban Coyote</h3>
+            <ul>
+{% assign posts = site.categories.urban-coyote %}
+{% for post in posts %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+{% endfor %}
+            </ul>
+            {% comment %}
+            <h2>All Categories</h2>
+            {% assign groups = site.categories.sources | group_by: "index" | sort: "name" %}
+            {% for group in groups %}
+            <h3>{{ group.name }}</h3>
+            <ul>
+			{% assign sortedItems = group.items | sort: "title" %}
+            {% for item in sortedItems %}
+                <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }} <div class="fa fa-arrow-right" aria-hidden="true"></div></a></li>
+            {% endfor %}
+            </ul>
+            {% endfor %}
+            {% endcomment %}
+        </div>
+        <div class="col-two">
+            <h2>Tags</h2>
+{% include tag-cloud.html %}
+        </div></div>
+    </div>
+    <div class="meta content-wrapper"><div>
+        <h4>Last built</h4>
+        <p>{{site.time}}</p>
+    </div></div>
+</div>
+{% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+            <p class="tag-cloud">
+            {% comment %}
+            <!-- Elegant solution! http://matthewfieger.com/posts/me/2014/02/11/jekyll-tag-cloud.html -->
+            {% endcomment %}
+{% for tag in site.tags %}
+            <span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 100 }}%; line-height: 1.25em;">
+                <a href="{{ site.baseurl }}/tags/{{ tag | first | downcase | replace: ' ', '-'}}">{{ tag | first }}</a><!--{% if forloop.last == false %}, {% endif %}-->
+            </span>
+{% endfor %}
+            </p>

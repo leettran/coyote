@@ -1,0 +1,11 @@
+    <div class="main-nav-wrapper"><div class="main-nav" role="navigation">
+        <p class="show-mobile-nav"><a href="#">Menu<!--&#8964;--></a></p><!--
+        --><ul><!--
+            --><li><a href="{{ site.baseurl }}/">Home</a></li><!--
+            --><li><a href="{{ site.baseurl }}/browse/"{% if page.active == 'browse-posts' or page.layout == 'tag' or page.layout == 'source' %} class="active"{% endif %}>Browse Posts</a></li><!--
+            --><li><a href="{{ site.baseurl }}/about-project/"{% if page.active == 'about-project'%} class="active"{% endif %}>About the Project</a></li><!--
+            --><li><a href="{{ site.baseurl }}/about-team/"{% if page.active == 'about-team'%} class="active"{% endif %}>About the Team</a></li><!--
+            --><li><a href="{{ site.baseurl }}/contact-us/"{% if page.active == 'contact-us'%} class="active"{% endif %}>Contact Us</a></li><!--
+		    --><li>{% include searchbox_small placeholder="Search"%}</li><!--
+        --></ul><!--
+    --></div></div>

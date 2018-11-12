@@ -1,0 +1,23 @@
+
+.listOfLinks ul {
+  padding: 0 0 0 2rem;
+}
+
+.listOfLinks li {
+  padding:0;
+  font-size:1.3rem;
+}
+
+.listOfLinks h3{
+  margin:2rem 0 1rem 0;
+}
+
+.listOfLinks a:hover {
+  color:$color-linkHover;
+}
+
+.listOfLinks .fa{
+  position:relative;
+  font-size:1rem;
+  top:-.02rem;
+}

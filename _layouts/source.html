@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body{% if page.youtube_url %} class="video"{% endif %}>
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
+        <h1>{{ page.title }}</h1>
+        {% if page.type == 'image' %}
+        <figure>
+            <a class="fancybox" href="{{ site.baseurl }}{{ page.img }}"><img src="{{ site.baseurl }}{{ page.img }}" /></a>
+            {% if page.caption %}<figcaption>{{ page.caption }}</figcaption>{% endif %}
+        </figure>
+        {% endif %}
+
+        {% if page.youtube_url %}
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ page.youtube_url | split: "v=" | last }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        {% if page.article_url %}
+        <p><img src="{{ site.baseurl }}/ui/img/article.png" width="100" style="vertical-align: middle;" /> <a href="{{ page.article_url }}">Read Article</a></p>
+        {% endif %}
+
+        {{ content }}
+    </div>
+    <div class="meta content-wrapper"><div>
+        {% if page.citation_title %}
+        <h4>Source</h4>
+        <h3>{% if page.citation_url %}<a href="{{ page.citation_url }}">{% endif %}{{ page.citation_title }}{% if page.citation_url %}</a>{% endif %}</h3>
+        <p>{% if page.citation_biblio %}{{ page.citation_biblio }}{% endif %}</p>
+        {% endif %}
+
+    {% for tag in page.tags %}
+    {% if forloop.first == true %}
+        <h4>Tagged</h4>
+        <p class="tag-cloud">
+    {% endif %}
+        <span><a href="{{ site.baseurl }}/tags/{{ tag | downcase | replace: ' ', '-'}}">{{ tag }}</a></span><!--{% if forloop.last == false %}, {% endif %}-->
+        {% if forloop.last == true %}</p>{% endif %}
+    {% endfor %}
+        </p>
+
+        <h4>File</h4>
+        <p>{{ page.path }}</p>
+        <h4>Last build</h4>
+        <p>{{site.time}}</p>
+    </div></div>
+</div>
+{% include footer.html %}
+</body>
+</html>

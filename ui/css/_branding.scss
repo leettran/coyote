@@ -1,0 +1,35 @@
+
+.brand-bar-wrapper {
+	background: $color-brandBackground;
+	width: 100%;
+}
+
+.brand-bar {
+	margin-right: auto;
+	margin-left: auto;
+	width: 940px;
+}
+
+.brand-tagline {
+	height: 42px;
+}
+
+.brand-tagline p {
+	font-family: $font-brand;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 48px;
+}
+
+.brand-tagline p a {
+	color: rgba(0, 0, 0, .5);
+	text-decoration: none;
+}
+
+.brand-tagline p a:hover {
+	text-decoration: underline;
+}
+
+.brand-tagline p a:first-child {
+	margin-right: 8px;
+}

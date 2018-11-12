@@ -1,0 +1,22 @@
+p.tag-cloud {
+	padding-top: 1em;
+}
+
+p.tag-cloud span {
+	background: $color-tagBackground;
+	color: $color-tagText;
+	display: inline-block;
+	font-family: $font-tagText;
+	font-size: 13px;
+	margin: 2px;
+	padding: 4px 8px;
+}
+
+p.tag-cloud span a {
+	color: $color-tagText;
+	text-decoration: none;
+}
+
+.listOfLinks p.tag-cloud a:after{
+  content: '';
+}

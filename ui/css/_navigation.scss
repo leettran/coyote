@@ -1,0 +1,43 @@
+
+.main-nav-wrapper {
+	background: $color-navBackground;
+	/*width: 100%;*/
+}
+
+.main-nav {
+	line-height: 0;
+	text-align: center;
+}
+
+.main-nav ul {
+	display: inline-block;
+	float: none;
+}
+@media all and (max-width: 940px) {
+	.main-nav ul {
+		display: block;
+	}
+}
+
+.main-nav ul li a.active,
+.main-nav ul li a:active,
+.main-nav ul li a:hover {
+	background: #625044;
+}
+@media all and (max-width: 940px) {
+	.brand-bar {
+		width: 100%;
+	}
+
+	.main-nav ul,
+	.main-nav ul li,
+	.main-nav ul li a,
+	.main-nav ul.show {
+		width: 100% !important;
+	}
+}
+
+.main-nav ul li {
+	border-left: none;
+	line-height: 2em;
+}

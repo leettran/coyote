@@ -1,0 +1,22 @@
+---
+new_page_extension: md
+auto_deploy: true
+admin_path: ''
+webhook_url: 
+sections:
+- type: jekyll-posts
+  label: Posts
+  create: all
+- type: directory
+  path: sources/img
+  label: Uploads
+  create: all
+  match: "**/*"
+- type: jekyll-pages
+  label: Pages
+  create: all
+upload_dir: sources/img
+public_path: "/sources/img"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"

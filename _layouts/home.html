@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
+
+        <h1>{{ page.title }}</h1>
+
+		{% include searchbox placeholder="What coyote are you looking for?"%}
+
+		<figure>
+            <a class="fancybox" href="/coyote/sources/img/urban-coyote1.jpg"><img src="/coyote/sources/img/urban-coyote1.jpg" /></a>
+        </figure>
+
+		{{ content }}
+
+        <ul>
+            <li><a href="{{ site.baseurl }}/browse">Browse posts</a></li>
+        </ul>
+
+    </div>
+    <div class="meta content-wrapper"><div>
+        <h4>Last built</h4>
+        <p>{{site.time}}</p>
+    </div></div>
+</div>
+{% include footer.html %}
+</body>
+</html>

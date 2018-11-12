@@ -1,0 +1,42 @@
+---
+---
+
+@charset "utf-8";
+
+/* Normalize
+
+Note: we don't do this here because we already do it in head.html, via a link to
+https://hofstra.github.io/design-framework/ui/css/styles.css
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"); // Google fonts
+*/
+
+/* Import Google fonts */
+@import url("https://fonts.googleapis.com/css?family=Oswald:700|Alegreya:400,400italic,700|Montserrat");
+
+/* FontAwesome icon font http://fontawesome.io/ */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+/* Sitewide */
+$font-brand: 'Montserrat', sans-serif;
+$font-header: 'Oswald', sans-serif;
+$font-bodyCopy: 'Alegreya', serif;
+$font-tagText: $font-brand;
+
+$color-navBackground: #c2b4a5;
+$color-brandBackground: #ffffff;
+
+$color-tagText: #ffffff;
+$color-tagBackground: #625044;
+
+$color-linkHover: rgb(50, 91, 130);
+
+
+/* Includes */
+@import "sitewide";
+@import "branding";
+@import "navigation";
+@import "tagging";
+@import "listOfLinks";
+@import "search";
+@import "typeahead";
